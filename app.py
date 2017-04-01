@@ -13,19 +13,6 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
-
-def myfunc(qry):
-    DB_NAME='shihad'
-    cnx = mysql.connector.connect(user='root')
-    cursor = cnx.cursor()
-    cnx.database = DB_NAME
-
-    cursor.execute(qry)
-
-    return
-
-
-
 # Flask app should start in global layout
 app = Flask(__name__)
 
@@ -51,7 +38,7 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("college-names")
-    cost = {'NSS':5000, 'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
+    cost = {'NSS':500, 'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
     speech = "The college details  " + zone + " is " + str(cost[zone])
 
     print("Response:")
