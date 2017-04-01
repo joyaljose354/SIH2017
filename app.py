@@ -4,11 +4,6 @@ import urllib
 import json
 import os
 
-
-from __future__ import print_function
-
-import mysql.connector
-from mysql.connector import errorcode
 from flask import Flask
 from flask import request
 from flask import make_response
