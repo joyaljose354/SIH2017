@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import urllib
 import json
 import os
@@ -30,13 +28,14 @@ def webhook():
 def makeWebhookResult(req):
     if req.get("result").get("action") != "college_details":
         return {}
+    else:
     result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("college-names")
+    zone = parameters.get("shipping-zone")
 
-    cost = {'NSS':500, 'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
+    cost = {'NSS':100, 'CET':200, 'FISAT':300, 'GEC':400, 'NIT':500}
 
-    speech = "The college details  " + zone + " is " + str(cost[zone])
+    speech = "The cost of shipping to " + zone + " is " + str(cost[zone])
 
     print("Response:")
     print(speech)
@@ -46,7 +45,7 @@ def makeWebhookResult(req):
         "displayText": speech,
         #"data": {},
         # "contextOut": [],
-        "source": "UGC_Pandit"
+        "source": "apiai-onlinestore-shipping"
     }
 
 
@@ -55,4 +54,4 @@ if __name__ == '__main__':
 
     print "Starting app on port %d" % port
 
-    app.run(debug=True, port=port, host='127.0.0.1')
+    app.run(debug=True, port=port, host='0.0.0.0')
