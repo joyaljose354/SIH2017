@@ -4,9 +4,27 @@ import urllib
 import json
 import os
 
+
+from __future__ import print_function
+
+import mysql.connector
+from mysql.connector import errorcode
 from flask import Flask
 from flask import request
 from flask import make_response
+
+
+def myfunc(qry):
+    DB_NAME='shihad'
+    cnx = mysql.connector.connect(user='root')
+    cursor = cnx.cursor()
+    cnx.database = DB_NAME
+
+    cursor.execute(qry)
+
+    return
+
+
 
 # Flask app should start in global layout
 app = Flask(__name__)
@@ -34,7 +52,7 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("college-names")
 
-    cost = {'NSS':100, 'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
+    cost = {'NSS':myfunc("SELECT `NameoftheInstituteLocation` FROM `naac` WHERE `NameoftheInstituteLocation` LIKE 'Al%'"), 'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
 
     speech = "The college details  " + zone + " is " + str(cost[zone])
 
