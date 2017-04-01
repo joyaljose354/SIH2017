@@ -4,6 +4,10 @@ import urllib
 import json
 import os
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 57a7429542193d8ce92b8aa4bb5c3f7828a425d4
 from __future__ import print_function
 
 import mysql.connector
@@ -52,9 +56,13 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("college-names")
+<<<<<<< HEAD
 
     cost = {'NSS':5000,'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
 
+=======
+    cost = {'NSS':500, 'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
+>>>>>>> 57a7429542193d8ce92b8aa4bb5c3f7828a425d4
     speech = "The college details  " + zone + " is " + str(cost[zone])
 
     print("response:")
