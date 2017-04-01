@@ -53,7 +53,7 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("college-names")
 
-    cost = {'NSS':500, 'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
+    cost = {'NSS':5000,'CET':200, 'FISAT':300, 'NIT':400, 'GEC':500}
 
     speech = "The college details  " + zone + " is " + str(cost[zone])
 
