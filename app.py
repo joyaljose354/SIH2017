@@ -28,14 +28,14 @@ def webhook():
 def makeWebhookResult(req):
     if req.get("result").get("action") != "college_details":
         return {}
-    else:
-        result = req.get("result")
-        parameters = result.get("parameters")
-        zone = parameters.get("shipping-zone")
 
-        cost = {'NSS':100, 'CET':200, 'FISAT':300, 'GEC':400, 'NIT':500}
+    result = req.get("result")
+    parameters = result.get("parameters")
+    zone = parameters.get("shipping-zone")
 
-        speech = "The cost of shipping to " + zone + " is " + str(cost[zone])
+    cost = {'NSS':100, 'CET':200, 'FISAT':300, 'GEC':400, 'NIT':500}
+
+    speech = "The cost of shipping to " + zone + " is " + str(cost[zone])
 
     print("Response:")
     print(speech)
