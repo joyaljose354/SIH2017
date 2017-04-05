@@ -31,7 +31,7 @@ def makeWebhookResult(req):
     else:
         result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("shipping-zone")
+    zone = parameters.get("college-names")
 
     cost = {'NSS':5000, 'CET':200, 'FISAT':300, 'GEC':400, 'NIT':500}
 
@@ -45,7 +45,7 @@ def makeWebhookResult(req):
         "displayText": speech,
         #"data": {},
         # "contextOut": [],
-        "source": "apiai-onlinestore-shipping"
+        "source": "SIH"
     }
 
 
