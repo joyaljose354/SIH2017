@@ -28,7 +28,8 @@ def webhook():
 def makeWebhookResult(req):
     if req.get("result").get("action") != "nss_details":
         return {}
-    result = req.get("result")
+    else:
+        result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("shipping-zone")
 
