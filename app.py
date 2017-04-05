@@ -33,7 +33,15 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     zone = parameters.get("college-names")
 
-    cost = {'NSS':5000, 'CET':200, 'FISAT':300, 'GEC':400, 'NIT':500}
+    cost = {'NSS':{state : kerala  
+                    District : Thrissur
+                    University Type : State Public University 
+                    university Name  : Calicut University, Thenipalem,malapuram 
+                    College Type : Affiliated College 
+                    Website : www.gectcr.ac.in 
+                    Management : State Government  
+                    Established On : 1957 }, 
+                    'CET':200, 'FISAT':300, 'GEC':400, 'NIT':500}
 
     speech = "The college rank is " + zone + " is " + str(cost[zone])
 
