@@ -28,7 +28,7 @@ def webhook():
 def makeWebhookResult(req):
     if req.get("result").get("action") != "college_details":
         return {}
-    result = req.get("result")
+    result < req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("shipping-zone")
 
